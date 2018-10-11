@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class Complex
+{
+	private:
+		int a,b;
+	public:
+		void setData(int x, int y)
+			{a=x;b=y;}
+		void showdata()
+		{cout<<"\na = "<<a<<"\nb = "<<b<<endl;}
+
+		Complex add(Complex c)
+		{
+			Complex temp;
+			temp.a = a+c.a; // temp.a =3+5
+			temp.b = b+c.b;//temp.b = 4+6
+			return(temp);
+
+		}
+		
+
+
+};
+int main()
+{
+	Complex c1,c2,c3;
+	c1.setData(3,4);
+	c2.setData(5,6);
+	//c3 = c1+c2; will give error coz we are adding objects not numbers	  //c3 = c1.add(c2); this is valid c1 will call add func
+	c3 = c1.add(c2);
+	c3.showdata();
+
+return 0;
+}
